@@ -7,7 +7,7 @@
     <title>Rubikin ratkaisu</title>
     <link rel="icon" type="image/png" href="images/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/kuutio.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,19 +37,20 @@
             </div>
         </div>
     </nav>
-    <div class="content">
+
+
+    <div class="content pt-3">
+        <aside class="w-25 fixed-right">
+            <ul class="list-group w-100">
+                <li class="list-group-item list-group-item-dark"><a href="#pieces"><b>Rubikin kuution palat</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#notation"><b>Algoritmi notaatio</b></a></li>
+                <li class="list-group-item list-group-item-dark"><b>Käännökset kuvana</b></li>
+                <li class="list-group-item list-group-item-dark"><b>Muuta tietoa</b></li>
+                <li class="list-group-item list-group-item-dark"><b>Yhteystiedot</b></li>
+          </ul>
+        </aside>
         <div class="row justify-content-around">
-            <div class=" col-4 col-md-2">
-                <div>
-                    <ul class="list-group w-auto">
-                        <li class="list-group-item list-group-item-dark"><a href="#pieces"><b>Rubikin kuution palat</b></a></li>
-                        <li class="list-group-item list-group-item-dark"><b>Algoritmi notaatio</b></li>
-                        <li class="list-group-item list-group-item-dark"><b>Käännökset kuvana</b></li>
-                        <li class="list-group-item list-group-item-dark"><b>Muuta tietoa</b></li>
-                        <li class="list-group-item list-group-item-dark"><b>Yhteystiedot</b></li>
-                      </ul>
-                </div>
-            </div>
+            <div class="row"></div>
             <div class="row col-11 col-sm-6 col-md-8 bg-dark">
                 <div class="row">
                     <h2 class="text-center pt-3">Rubikin kuutio</h2>
@@ -62,7 +63,7 @@
                     <div>
                         <h2 class="text-center" id="pieces">Rubikin kuution palat</h2>
                         <p>
-                            Rubikin kuutiossa on kolme vertikaalista kerrosta. Aloittelijoille suositellaan yhden kerroksen ratkaisemista kerrallaan.
+                            Rubikin kuutiossa on kolme vertikaalista kerrosta. Aloittelijoille suositellaan yhden kerroksen ratkaisemista kerrallaan, ja käyännössä niin tehdään tämänkin sivun ohjeissa.
                         </p>
                         <br>
                         <div class="card-group">
@@ -87,34 +88,40 @@
                           </div>
                           <br>
                         <p>
-                            Kuutiossa on kuusi tahkoa, jotka erottuvat toisistaan värein. Nämä tahkot sijoittuvat toistensa suhteen tietyyn järjestykseen. Asiasta enemmän tietoa myöhemmin.
-                            Jokaisen tahkon keskellä on keskusta. Keskustapalassa näkyy vain yksi väri. Jokaisella kerroksella on 4 särmäpalaa, joten niitä on yhteensä 12 kappaletta.
-                            Kulmapaloja on 8 kappaletta. *Tämä on pitkä kappale, tarvittaessa voi kertoa enemmän eri paloista, jos ei riittävästi tekstiä*
+                            Kuutiossa on kuusi tahkoa, jotka erottuvat toisistaan värein. Nämä tahkot sijoittuvat toistensa suhteen tiettyyn järjestykseen. Sininen on vihreää vastapäätä, keltainen valkoista ja oranssi punaista.
+                            Jokaisen tahkon keskellä on keskusta. Keskustapalassa näkyy vain yksi väri. 
+                        </p>
+                        <p>
+                            Paloista on kerrottu (englanniksi) paljon tarkemmin <a href="https://www.youcandothecube.com/solve-it/3x3-solution" target="_blank"><b>tällä sivulla</b></a>, jossa on myös aloittelijan ohje kuution ratkaisuun. Älä kuitenkaan huoli, tieto paloista ja kerroksista ei ole kovin tärkeää ratkaisun kannalta. Paljon tärkeämpää on seuraava osio, jossa kerrotaan kuinka algoritmeja luetaan.
 
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <h2 class="text-center" id="notation">Algoritmi notaatio</h2>
+                    <h2 class="text-center mt-2" id="notation">Algoritmi notaatio</h2>
                     <p>
                         Kuution ratkaisemiseen käytetyt algoritmit näyttävät suunnilleen tältä:
-                        " R U R' U R U2 R' "
-                        Algoritmissa siis voi esiintyä heittomerkki ('), numero (2) ja kirjain (T,D, F, B, L, R). Näillä on tietyt merkitykset, ja niiden yhdistelmillä voi tehdä 
+                    </p>
+                    <h4 class="text-center">R U R' U R U2 R'</h4>
+                    <p>Algoritmissa siis voi esiintyä heittomerkki ('), numero (2) ja kirjain (T,D, F, B, L, R). Näillä on tietyt merkitykset, ja niiden yhdistelmillä voi tehdä 
                         minkä tahansa sivun/kerroksen käännön. Algoritmi luetaan vasemmalta oikealle. Selostetaan mitä merkit tarkoittavat:
                     </p>
+                    <h4>R</h4>
+                    <p>
+                        R tarkoittaa kuution oikean sivun kääntämistä kellon kulkusuuntaan, jos katsoisit sivua. Eli käytännössä alhaalla vasemmalla oleva pala siirtyy oikealle ylös.
+                    </p>
+                    <img class="img-thumbnail" src="./images/R.png" alt="R turn" >
                 </div>
-            </div>            
+            </div>
+            <div class="col-1">
+            </div>          
           </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>    
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    
     <footer class="position-fixed bottom-0 w-100">
         <div class="bg-dark text-center">
             Lauri Hyvärinen  &copy; <script>document.write(new Date().getFullYear())</script>
