@@ -17,8 +17,19 @@ p{
     font-size: large;
 }
 
-h2, h4, h5{
+h4, h5{
     color: aliceblue;
+}
+h3, h2 {
+    color: aliceblue;
+    padding-top: 2em;
+}
+
+#faces > li {
+    list-style: square;
+    margin-left: 4em;
+    color: aliceblue;
+    font-size: larger;
 }
 
 .list-group-item-dark{

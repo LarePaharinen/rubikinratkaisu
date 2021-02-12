@@ -44,8 +44,8 @@
             <ul class="list-group w-100">
                 <li class="list-group-item list-group-item-dark"><a href="#pieces"><b>Rubikin kuution palat</b></a></li>
                 <li class="list-group-item list-group-item-dark"><a href="#notation"><b>Algoritmi notaatio</b></a></li>
-                <li class="list-group-item list-group-item-dark"><b>Käännökset kuvana</b></li>
-                <li class="list-group-item list-group-item-dark"><b>Muuta tietoa</b></li>
+                <li class="list-group-item list-group-item-dark"><a href="#moves"><b>Käännökset kuvana</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#info"><b>Muuta tietoa</b></a></li>
                 <li class="list-group-item list-group-item-dark"><b>Yhteystiedot</b></li>
           </ul>
         </aside>
@@ -68,21 +68,21 @@
                         <br>
                         <div class="card-group">
                             <div class="card bg-dark">
-                              <img class="card-img-top" src="images/alin kerros.png" alt="Card image cap">
+                              <img class="card-img-top w-75" src="images/alin kerros.png" alt="Card image cap">
                               <div class="card-body">
-                                <h5 class="card-title text-center">Alin kerros</h5>
+                                <h5 class="card-title">Alin kerros</h5>
                               </div>
                             </div>
                             <div class="card bg-dark">
-                              <img class="card-img-top" src="images/keskikerros.png" alt="Card image cap">
+                              <img class="card-img-top w-75" src="images/keskikerros.png" alt="Card image cap">
                               <div class="card-body">
-                                <h5 class="card-title text-center">Keskimmäinen kerros</h5>
+                                <h5 class="card-title">Keskimmäinen kerros</h5>
                               </div>
                             </div>
                             <div class="card bg-dark">
-                              <img class="card-img-top" src="images/ylinkerros.png" alt="Card image cap">
+                              <img class="card-img-top w-75" src="images/ylinkerros.png" alt="Card image cap">
                               <div class="card-body">
-                                <h5 class="card-title text-center">Ylin kerros</h5>
+                                <h5 class="card-title">Ylin kerros</h5>
                               </div>
                             </div>
                           </div>
@@ -102,15 +102,56 @@
                     <p>
                         Kuution ratkaisemiseen käytetyt algoritmit näyttävät suunnilleen tältä:
                     </p>
-                    <h4 class="text-center">R U R' U R U2 R'</h4>
-                    <p>Algoritmissa siis voi esiintyä heittomerkki ('), numero (2) ja kirjain (T,D, F, B, L, R). Näillä on tietyt merkitykset, ja niiden yhdistelmillä voi tehdä 
+                    <h5 class="text-center">R U R' U R U2 R'</h5>
+                    <p>
+                        Algoritmissa siis voi esiintyä heittomerkki ('), numero (2) ja kirjain (T,D, F, B, L, R). Näillä on tietyt merkitykset, ja niiden yhdistelmillä voi tehdä 
                         minkä tahansa sivun/kerroksen käännön. Algoritmi luetaan vasemmalta oikealle. Selostetaan mitä merkit tarkoittavat:
                     </p>
-                    <h4>R</h4>
+
+                    <h3 class="text-center">Kirjain</h3>
                     <p>
-                        R tarkoittaa kuution oikean sivun kääntämistä kellon kulkusuuntaan, jos katsoisit sivua. Eli käytännössä alhaalla vasemmalla oleva pala siirtyy oikealle ylös.
+                        Jokainen kirjain vastaa yhtä kuution sivua. Kun algoritmia suoritetaan, ei kuutiota käännellä. Tämä tarkoittaa, ettei algoritmin suorituksen aikana kuution keskustat vaihda paikkaa. Kirjaimet ovat:
                     </p>
-                    <img class="img-thumbnail" src="./images/R.png" alt="R turn" >
+                    <ul id="faces">
+                        <li>R (right) = kuution oikeaa sivua</li>
+                        <li>L (left) = kuution vasenta sivua</li>
+                        <li>F (front) = kuution edessä olevaa sivua</li>
+                        <li>B (back) = kuution takana olevaa sivua</li>
+                        <li>U (up) = kuution ylhäällä olevaa sivua</li>
+                        <li>D (down) = kuution alhalla olevaa sivua</li>
+                    </ul>
+                    <p>
+                         R esim. tarkoittaa kuution oikean sivun kääntämistä kellon kulkusuuntaan, jos katsoisit sivua. Eli käytännössä alhaalla oikealla oleva pala siirtyy oikealle ylös.
+                    </p>
+                    <div class="text-center">
+                        <img src="./images/R.png" alt="R turn" class="rounded mx-auto d-block">
+                    </div>
+
+                    <h3 class="text-center">Heittomerkki</h3>
+                    <p>
+                        ' tarkoittaa kuution sivun kääntämistä vastapäivään, jos katsoisit sivua. Eli R' tarkoittaa, että kuution oikealla ylhäällä sijaitseva pala siirtyy oikealle alas.
+                    </p>
+                    <div class="text-center">
+                        <img src="./images/R'.png" alt="R turn" class="rounded mx-auto d-block">
+                    </div>
+
+                    <h3 class="text-center">2</h3>
+                    <p>
+                        Numero 2 kirjaimen jälkeen tarkoittaa, että kuution sivua käännetään kahdesti. Huomionarvoista on, ettei suunnalla ole väliä. Kaksi 90° asteen käänöstä kumpaan tahansa suuntaan vastaa 180° käännöstä.
+                    </p>
+                </div>
+                <div class="row">
+                    <h2 class="text-center mt-2" id="moves">Käännökset kuvassa</h2>
+                    <div class="text-center">
+                        <img src="./images/rotations.png" alt="R turn" class="rounded mx-auto d-block" height="800" width="800">
+                    </div>
+                </div>
+                <div class="row">
+                    <h2 class="text-center mt-2" id="info">Muuta tietoa</h2>
+                    <h4> Miten tämä on muka vaikeaa? </h4>
+                    <p>
+                        Ei se olekkaan! Algoritmien seuraaminen on varsin helppoa ja yksinkertaista, kunhan tietää mitä merkinnät tarkoittavat. Vaikeaksi homma alkaa muuttumaan, kun haluaa oppia algoritmit ulkoa, ettei tarvitse aina seurata ohjetta. Tai sitten, kun haluaa opiskella 78 erilaista algoritmia viimeisen kerroksen ratkaisemiseen.
+                    </p>
                 </div>
             </div>
             <div class="col-1">
