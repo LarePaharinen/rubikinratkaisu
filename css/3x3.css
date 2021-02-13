@@ -50,3 +50,8 @@ h5, h3, h2 {
 footer{
     color:aliceblue;
 }
+@media (max-width: 768px){
+    #navAside{
+        display: none;
+    }
+}
