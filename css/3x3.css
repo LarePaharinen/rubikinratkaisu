@@ -27,6 +27,13 @@ h5, h3, h2 {
     padding-top: 2em;
 }
 
+.phasesUL {
+    list-style: square;
+    margin-left: 4em;
+    color: aliceblue;
+    font-size: larger;
+}
+
 #faces > li {
     list-style: square;
     margin-left: 4em;

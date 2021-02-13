@@ -7,7 +7,7 @@
     <title>Rubikin ratkaisu</title>
     <link rel="icon" type="image/png" href="images/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/3x3.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,38 +37,123 @@
             </div>
         </div>
     </nav>
-    <div class="content">
-        <div class="row d-flex">
-            <div class="col"></div>
-            <div class="col-8 main-content">
-                <h2 class="text-center">Tervetuloa!</h2>
-                <br/>
-                <hr/>
-                <br/>
-                <p>
-                    Tämä sivusto on tarkoitettu helpoksi suomenkieliseksi ohjeeksi, jonka avulla aloittelija voi ratkaista rubikin kuution!
-                    Ohjeita seuraamalla kuutio on helppo ratkaista, ja olen valinnut ohjeiksi yhden helpommin muistettavista tavoista
-                    ratkaista kuutio. Se ei ole aivan virallinen aloittelijan ratkaisu, mutta siitä on mielestäni helpompi siirtyä opettelemaan 
-                    nopeampia ratkaisuja.
-                </p>
-                <br/>
-                <p>
-                    Aivan aluksi kannattaa mennä <a href="kuutio.html">Tietoa Kuutiosta</a>-sivulle, jotta kuutioon liittyvä sanasto tulee tutuksi. Ohjeiden lukeminen on helpompaa, kun tiedät mitä CFLOP ja U R U' R' tarkoittavat.
-                    Jos jo osaat ratkaista rubikin kuution, tai muuten vaan kaipaat lisää tietoa, kannattaa mennä Lisäresurssit-sivulle. Siellä on paljon linkkejä, videoita ja muuta aiheeseen liittyvää nippelitietoa!
-                </p>
-                <br/>
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
 
-    <footer class="position-absolute bottom-0 w-100">
+
+    <div class="content pt-3">
+        <aside class="w-25 fixed-right">
+            <ul class="list-group w-100">
+                <li class="list-group-item list-group-item-dark"><a href="#general"><b>Yleinen</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#wCross"><b>Valkoinen risti</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#wLayer"><b>Valkoinen kerros</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#F2L"><b>Toinen kerros</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#yCross"><b>Keltainen risti</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#yLayer"><b>Keltainen kerros</b></a></li>
+          </ul>
+        </aside>
+        <div class="row justify-content-around">
+            <div class="row"></div>
+            <div class="row col-11 col-sm-6 col-md-8 bg-dark">
+                <div class="row">
+                    <h2 class="text-center pt-3" id="general">Aloittelijan ratkaisu</h2>
+                    <p class="p-3">
+                        Ratkaisu etenee vaiheittain. Jos osaat jonkun vaiheen jo valmiiksi, voit hypätä eteenpäin oikealla olevasta valikosta. Vaiheet ovat:
+                    </p>    
+                    <ul class="phasesUL">
+                        <li>Valkoinen risti</li>
+                        <li>Valkoinen kerros</li>
+                        <li>Toinen kerros</li>
+                        <li>Keltainen risti</li>
+                        <li>Keltainen kerros</li>
+                    </ul>
+                    <p>
+                        Jos oikeasti haluat ratkaista kuution, suosittelen seuraamaan <a href="https://www.youcandothecube.com/solve-it/3x3-solution" target="_blank">näitä</a> ohjeita. Tämän sivun sisältö (varsinaisen ratkaisun ohjeistus) on vielä työn alla.
+                    </p>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="wCross">Valkoinen risti</h2>
+                        <p>
+                            Tehtävänä on muodostaa valkoinen risti. Tämä vaihe on suhteellisen helppo, ja onnistuu yleensä ilma isompia ongelmia. Ainut huomiota tarvitseva asia on, että valkoiset reunapalat sijoittuvat oikein suhteessa toisiinsa. Valkoinen/punainen palaa vastapäätä pitää olla valkoinen/oranssi pala.
+                            Onnistuneen ristin jälkeen kuution pitäisi näyttää tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/wCross.png" alt="White Cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="wLayer">Valkoinen kerros</h2>
+                        <p>
+                            Tehtävänä on muodostaa valkoinen kerros. Nyt kuutio kannattaa kääntää niin, että tehty risti on kuution alhaalla. Vaihe on valmis, kun kuutio näyttää tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/wLayer.png" alt="White Cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="F2L">Toinen kerros</h2>
+                        <p>
+                            Tehtävänä on muodostaa toinen kerros. Algoritmeja on kaksi, niissä keskustan yläpuolella oleva reunapala sijoitetaan joko keskustan vasemmalle tai oikealle puolelle. <br>
+                            Oikealle puolelle: U R U' R' U' F' U F<br>
+                            Vasemmalle puolelle: U' L' U L U F U' F'<br>
+                            Vaihe on valmis, kun kuutio näyttää tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/F2L.png" alt="First two layers" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="yCross">Keltainen risti</h2>
+                        <p>
+                            Tehtävänä on muodostaa keltainen risti siten, että keltaisten reunapalojen toinen väri on oikean keskustan kanssa. Vaiheen voi jakaa kahteen osaan, ristin muodostamiseen ja reunapaljon siirtelyyn.
+                        </p>
+                        <p>
+                            Ristin muodostamiseen tarvitsee osata vain yksi algoritmi: F R U R' U' F'
+                        </p>
+                        <p>
+                            Reunapalojen siirtelyyn algoritmi: R U R' U R U2 R' <br>
+                            Vaihe on valmis, kun kuutio näyttää tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/yCross.png" alt="Yellow cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="yLayer">Keltainen kerros</h2>
+                        <p>
+                            Viimeinen vaihe, joka voidaan jakaa kahteen osaan. Aluksi, kulmat pitää saada oikeille paikoille. Sen jälkeen kulmia voi, ja yleensä joutuu, kääntämään. Tähän on kaksi algoritmia. Ensiksi kolmea kulmaa voi vaihtaa algoritmilla: U R U' L' U R' U' L. 
+                        </p>
+                        <p>
+                            Kulmien kääntäminen tapahtuu algoritmilla: R' D R D'. Algoritmia toistetaan, kunnes keltainen väri on ylhäällä. Sitten tehdään tarpeeksi monta U siirtoa, että oikealla ylhäällä on taas kulma joka vaati kiertoa. Kuutio voi näyttää esim. tältä, kun kulmat ovat sijoitettu oikealle paikalle, mutta ne vaativat kääntöä.
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/yLayer.png" alt="Yellow cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>          
+          </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>    
+
+    <footer class="position-fixed bottom-0 w-100">
         <div class="bg-dark text-center">
             Lauri Hyvärinen  &copy; <script>document.write(new Date().getFullYear())</script>
         </div>
     </footer>
-
-    <script src="js/index.js"></script>
+    <script src="js/kuutio.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
