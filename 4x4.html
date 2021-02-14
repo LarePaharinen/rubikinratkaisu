@@ -7,7 +7,7 @@
     <title>Rubikin ratkaisu</title>
     <link rel="icon" type="image/png" href="images/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/4x4.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,37 +37,116 @@
             </div>
         </div>
     </nav>
-    <div class="content">
-        <div class="row d-flex">
-            <div class="col"></div>
-            <div class="col-8 main-content">
-                <h2 class="text-center">Tervetuloa!</h2>
-                <br/>
-                <hr/>
-                <br/>
-                <p>
-                    Tämä sivusto on tarkoitettu helpoksi suomenkieliseksi ohjeeksi, jonka avulla aloittelija voi ratkaista rubikin kuution!
-                    Ohjeita seuraamalla kuutio on helppo ratkaista, ja olen valinnut ohjeiksi yhden helpommin muistettavista tavoista
-                    ratkaista kuutio. Se ei ole aivan virallinen aloittelijan ratkaisu, mutta siitä on mielestäni helpompi siirtyä opettelemaan 
-                    nopeampia ratkaisuja.
-                </p>
-                <br/>
-                <p>
-                    Aivan aluksi kannattaa mennä <a href="kuutio.html">Tietoa Kuutiosta</a>-sivulle, jotta kuutioon liittyvä sanasto tulee tutuksi. Ohjeiden lukeminen on helpompaa, kun tiedät mitä CFLOP ja U R U' R' tarkoittavat.
-                    Jos jo osaat ratkaista rubikin kuution, tai muuten vaan kaipaat lisää tietoa, kannattaa mennä Lisäresurssit-sivulle. Siellä on paljon linkkejä, videoita ja muuta aiheeseen liittyvää nippelitietoa!
-                </p>
-                <br/>
-            </div>
-            <div class="col"></div>
-        </div>
-    </div>
 
-    <footer class="position-absolute bottom-0 w-100">
+    <button onclick="scrollToTop()" id="topScrollBtn" title="Mene ylös">Ylös</button>
+    <div class="container-fluid pt-3">
+        <aside class="w-25 fixed-right" id="navAside">
+            <ul class="list-group w-100">
+                <li class="list-group-item list-group-item-dark"><a href="#general"><b>Yleinen</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#center"><b>Tee keskustat</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#edges"><b>Parita reunapalat</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#3x3"><b>Ratkaise kuten 3x3</b></a></li>
+                <li class="list-group-item list-group-item-dark"><a href="#parity"><b>Pariteetit</b></a></li>
+          </ul>
+        </aside>
+        <div class="row justify-content-around">
+            <div class="row"></div>
+            <div class="row col-11 col-md-8 bg-dark">
+                <div class="row">
+                    <h2 class="text-center pt-3" id="general">Aloittelijan ratkaisu</h2>
+                    <p class="p-3">
+                        Ratkaisu etenee vaiheittain. Jos osaat jonkun vaiheen jo valmiiksi, voit hypätä eteenpäin oikealla olevasta valikosta. Vaiheet ovat:
+                    </p>    
+                    <ul class="phasesUL">
+                        <li>Keskustojen tekeminen</li>
+                        <li>Reunojen parittaminen</li>
+                        <li>3x3 tapaan ratkaiseminen</li>
+                        <li>Pariteetit</li>
+                    </ul>
+                    <p>
+                        Jos oikeasti haluat ratkaista kuution, suosittelen seuraamaan <a href="https://www.youcandothecube.com/solve-it/4x4-solution" target="_blank">näitä</a> ohjeita. Tämän sivun sisältö (varsinaisen ratkaisun ohjeistus) on vielä työn alla. 4x4 kuutiossa on myös hiukan erilainen notaatio.
+                    </p>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="center">Tee keskustat</h2>
+                        <p>
+                            Tehtävänä on muodostaa keskustoihin yhtenäiset värit. Käytänössä yksi algoritmi riittää: Rr U R'r'<br>
+                            Vaiheen jälkeen kuutio näyttää suunnilleen tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/4x4centers.png" alt="White Cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="edges">Parita reunapalat</h2>
+                        <p>
+                            Tehtävänä on saada reunapalat vierekkäin. 4x4 kuutiossa on kaksi kappaletta jokaista reunapalaa, kuten oranssi/vihreä. Tässä vaiheessa ne palat asetetaan vierekkäin. Kahdella algoritmilla pärjää: <br>
+                            1: Dd R F' U R' F D'd' <br>
+                            2: R F' U F<br>
+                            Algoritmia 2 ei aina tarvitse tehdä. Vaiheen jälkeen kuutio näyttää tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/4x4edges.png" alt="White Cross" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="3x3">Ratkaise kuten 3x3</h2>
+                        <p>
+                            Nyt kuutio on tilassa, joka käytänössä vastaa 3x3 kuutiota, joten sen voi (melkein) ratkaista kuten 3x3 kuution! Vastaan voi tosin tulla 4x4 kuutiolle ominainen pariteetti, josta tarkemmin seuraavassa kohdassa. Mutta nyt voit jatkaa kuution ratkaisua kääntelemällä vain uloimipia kerroksia. Ratkaistu 4x4 näyttää jotakuinkin tältä:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/4x4solved.png" alt="First two layers" class="rounded mx-auto d-block" width="200">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="parity">Pariteetit</h2>
+                        <p>
+                            Jos olet epäonnekas, voi vastaan tulla tilanne, jota ei voi tulla 3x3 kuutiolle. Silloin kuutio on jossakin näistä tilanteista:
+                        </p>
+                        <div class="text-center">
+                            <img src="./images/parityCross.png" alt="Yellow cross" class="rounded mx-auto d-block img-fluid" width="400">
+                        </div>
+                        <div class="text-center">
+                            <img src="./images/parityEdges.png" alt="Yellow cross" class="rounded mx-auto d-block img-fluid" width="400">
+                        </div>
+                        <p>
+                            Ylemmissä tapauksissa homma ratkeaa algoritmilla: r2 B2 U2 l U2 r' U2 r U2 F2 r F2 l' B2 r2<br>
+                            Alemmat vaativat algoritmia: r2 U2 r2 Uu2 r2 u2
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div>
+                        <h2 class="text-center" id="yLayer">Onnittelut, olet ratkaissut 4x4 rubikin kuution!</h2>
+                        <p>
+                            Eikun uudelleen sekoittamaan, ja katso osaatko ratkaista ensimmäiset vaiheet ilman ohjeita! Voit myös katsoa kellosta aikaa, ja katsoa kauanko sinulla menee kuution ratkaisuun. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>          
+          </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>    
+
+    <footer class="position-fixed bottom-0 w-100">
         <div class="bg-dark text-center">
             Lauri Hyvärinen  &copy; <script>document.write(new Date().getFullYear())</script>
         </div>
     </footer>
-    <script src="js/index.js"></script>
+    <script src="js/4x4.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </body>
